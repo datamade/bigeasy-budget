@@ -709,6 +709,7 @@
             }
             var globalOpts = app.GlobalChartOpts;
             this.chartOpts.chart.renderTo = data.get('slug') + "-selected-chart";
+            this.chartOpts.chart.marginBottom = 20;
             this.chartOpts.plotOptions.area.pointInterval = globalOpts.pointInterval
             this.chartOpts.plotOptions.area.pointStart = Date.UTC(collection.startYear, 1, 1)
             this.chartOpts.yAxis.min = Math.min.apply( Math, minValuesArray )
