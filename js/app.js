@@ -111,6 +111,7 @@
             } else {
                 this.bdView = view;
             }
+            $('#secondary-title').text(this.topLevelView);
             if (typeof year === 'undefined'){
                 year = this.activeYear;
             }
