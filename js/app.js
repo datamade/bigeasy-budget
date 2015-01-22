@@ -324,7 +324,10 @@
                 summary['appropChange'] = appropChange;
                 summary['rowId'] = item.get(view + ' ID');
                 summary['type'] = view
-                summary['link'] = item.get('Link to Website');
+                // 'Link to Website' column refers to department website, not fund or control officer
+                if (view == 'Department'){
+                    summary['link'] = item.get('Link to Website');
+                }
                 var hierarchy = self.hierarchy[self.topLevelView]
                 var ranking = hierarchy.indexOf(view)
                 if (ranking == 0){
