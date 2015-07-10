@@ -1,9 +1,12 @@
 (function(){
+
+    $('#introModal').modal('toggle')
+
     var app = {}
 
     // Configuration variables to set
     startYear   = 2007;  // first year of budget data
-    endYear     = 2014;  // last year of budget data
+    endYear     = 2015;  // last year of budget data
     activeYear  = 2012;  // default year to select
     debugMode   = false; // change to true for debugging message in the javascript console
     municipalityName = 'City of New Orleans'; // name of budget municipality 
@@ -11,7 +14,7 @@
     expendTitle = 'Expenditures';   // label for second chart line
 
     // CSV data source for budget data
-    dataSource  = '/data/big_easy_budget_breakdown_main.csv';
+    dataSource  = '/data/big_easy_budget_cleaned.csv';
     
     app.GlobalChartOpts = {
         apropColor:   '#AB861C',
@@ -223,6 +226,7 @@
                             console.log(j);
                         }
                         j['Fund Slug'] = BudgetHelpers.convertToSlug(j['Fund']);
+                        j['Results Area Slug'] = BudgetHelpers.convertToSlug(j['Results Area']);
                         j['Department Slug'] = BudgetHelpers.convertToSlug(j['Department']);
                         j['Control Officer Slug'] = BudgetHelpers.convertToSlug(j['Control Officer']);
                         loadit.push(j)
@@ -233,7 +237,7 @@
                         console.log(loadit);
                     }
                     self.hierarchy = {
-                        Fund: ['Fund', 'Department'],
+                        Fund: ['Fund', 'Results Area', 'Department'],
                         "Control Officer": ['Control Officer', 'Department']
                     }
                     if (typeof init === 'undefined'){
