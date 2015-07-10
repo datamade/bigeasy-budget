@@ -1,7 +1,5 @@
 (function(){
 
-    $('#introModal').modal('toggle')
-
     var app = {}
 
     // Configuration variables to set
