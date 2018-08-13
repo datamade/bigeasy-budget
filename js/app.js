@@ -4,8 +4,8 @@
 
     // Configuration variables to set
     startYear   = 2007;  // first year of budget data
-    endYear     = 2015;  // last year of budget data
-    activeYear  = 2012;  // default year to select
+    endYear     = 2018;  // last year of budget data
+    activeYear  = 2015;  // default year to select
     debugMode   = false; // change to true for debugging message in the javascript console
     municipalityName = 'City of New Orleans'; // name of budget municipality 
     apropTitle  = 'Appropriations'; // label for first chart line
